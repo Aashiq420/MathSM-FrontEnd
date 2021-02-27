@@ -1,0 +1,33 @@
+* {
+  margin: 0%;
+  padding: 0%;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+}
+
+section .login {
+  background-color: blue;
+}
+.switch-left h3 {
+  text-decoration: underline;
+  text-decoration-color: red;
+}
+.register {
+  display: none;
+  background-color: red;
+}
+
+.switch div h3 {
+  padding: 5px;
+}
+
+.switch div h3:hover {
+  background-color: gray;
+}
+
+section.landing {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
