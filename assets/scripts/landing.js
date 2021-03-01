@@ -1,3 +1,4 @@
+// add user to db
 function createUser() {
   const inputs = document.getElementsByTagName("input");
 
@@ -18,4 +19,9 @@ function createUser() {
       alert("New user created successfully");
       document.getElementById("register").reset();
     });
+}
+
+function switchReg() {
+  reg = document.getElementById("reg");
+  reg.style.display = "flex";
 }
