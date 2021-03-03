@@ -1,14 +1,15 @@
 // add user to db
 function createUser() {
-  const inputs = document.getElementsByTagName("input");
+  const form = document.getElementById("create-user");
+  const inputs = form.getElementsByTagName("input");
 
-  fetch("http://127.0.0.1:5000/landing/", {
+  fetch("https://limitless-river-33387.herokuapp.com/register/", {
     method: "POST",
     body: JSON.stringify({
       fullname: inputs[0].value,
-      username: inputs[0].value,
-      email: inputs[0].value,
-      password: inputs[0].value,
+      username: inputs[1].value,
+      email: inputs[2].value,
+      password: inputs[3].value,
     }),
     headers: {
       "Content-Type": "application/json; charset=UTF-8",
@@ -16,12 +17,28 @@ function createUser() {
   })
     .then((response) => response.json())
     .then((json) => {
-      alert("New user created successfully");
-      document.getElementById("register").reset();
-    });
+      alert(json);
+      console.log(json);
+      document.getElementById("create-user").reset();
+    })
+    .catch((e) => console.log(e));
 }
 
-function switchReg() {
-  reg = document.getElementById("reg");
-  reg.style.display = "flex";
-}
+//jquery stuff for modal
+$(document).ready(function () {
+  $("#account").on("click", function () {
+    $("#login").addClass("hide");
+    $("#login").removeClass("show");
+    $("#register").addClass("show");
+    $("#register").removeClass("hide");
+    $(".content").addClass("high");
+  });
+
+  $("#back").on("click", function () {
+    $("#login").addClass("show");
+    $("#login").removeClass("hide");
+    $("#register").addClass("hide");
+    $("#register").removeClass("show");
+    $(".content").removeClass("high");
+  });
+});
