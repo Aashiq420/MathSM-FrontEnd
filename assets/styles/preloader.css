@@ -7,7 +7,7 @@
   right: 0;
   height: 100vh;
   background-color: #299fd6;
-  animation: disappear 5s linear forwards;
+  animation: disappear 4s linear forwards;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,7 +18,7 @@
   display: block;
   transform: scale(1);
   background-image: url(https://image.ibb.co/fkybha/loader.png);
-  animation: loading 2.5s steps(75) infinite;
+  animation: loading 2s steps(75) infinite;
   margin: 0 auto;
 }
 
