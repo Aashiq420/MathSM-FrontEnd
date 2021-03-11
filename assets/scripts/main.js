@@ -103,11 +103,10 @@ document.addEventListener(
   "scroll",
   function () {
     const dropText = document.getElementById("droptext");
-    const messageText = isInViewport(form)
-      ? (dropText.style.display = "none") //"The box is visible in the viewport"
-      : (dropText.style.display = "inline-block"); //"The box is not visible in the viewport";
-
-    console.log(messageText);
+    isInViewport(form) ? (dropText.style.display = "none") : console.log();
+    isInViewport(dropText)
+      ? (dropText.style.display = "inline-block")
+      : (dropText.style.display = "none");
   },
   {
     passive: true,
