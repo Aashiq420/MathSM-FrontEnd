@@ -4,34 +4,38 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="./assets/images/brn-ico.png" rel="shortcut icon" />
-    <link rel="stylesheet" href="./assets/styles/landing.css">
-    <link rel="stylesheet" href="./assets/styles/preloader.css">
+    <link rel="stylesheet" href="./assets/styles/landing.css" />
+    <link rel="stylesheet" href="./assets/styles/preloader.css" />
     <title>Brainiac | Login</title>
   </head>
   <body>
-     <!-- Preloader -->
-     <div class="preloader">
-     <i class="brainLoader"></i>
-     </div>
+    <!-- Preloader -->
+    <div class="preloader">
+      <i class="brainLoader"></i>
+    </div>
     <!-- Sign-in/Register modal -->
     <div class="flexbox">
       <div class="content">
         <!-- ***login part ***-->
-        <form onsubmit="">
+        <form id="sign-in-form" onsubmit="event.preventDefault(); userLogin()">
           <div id="login" class="box show">
             <div class="field">
-              <div class="sign-in">Sign In<br><small>Login to continue</small></div>
+              <div class="sign-in">
+                Sign In<br /><small>Login to continue</small>
+              </div>
             </div>
             <div class="field">
               <label>Username</label>
-              <input type="text">
+              <input type="text" name="username" />
             </div>
             <div class="field">
               <label>Password</label>
-              <input type="password">
+              <input type="password" name="password" />
             </div>
             <div class="field">
-              <a href="#" id="account" class="trouble">Don't have an account yet?</a>
+              <a href="#" id="account" class="trouble"
+                >Don't have an account yet?</a
+              >
             </div>
             <div class="field">
               <button type="submit" class="btn-sign-in">Sign In</button>
@@ -41,25 +45,46 @@
         <!-- ***register part*** -->
         <div id="register" class="box hide">
           <div class="field">
-            <div class="sign-in">Register<br><small>Create your account</small></div>
+            <div class="sign-in">
+              Register<br /><small>Create your account</small>
+            </div>
           </div>
-            <form id="create-user" onsubmit="event.preventDefault(); createUser()">
-              <div class="field">
-                <label>Full name</label>
-                <input type="text" name="fullname" placeholder="eg.. John Doe" required>
-              </div>
-              <div class="field">
-                <label>Username</label>
-                <input type="text" name="username" placeholder="eg.. algebrainiac3435" required>
-              </div>
-              <div class="field">
-                <label>Email</label>
-                <input type="email" name="email" placeholder="eg.. albert.einstein@time.com"  required>
-              </div>
-              <div class="field">
-                <label>Password</label>
-                <input type="password" name="password" required>
-              </div>
+          <form
+            id="create-user"
+            action="https://limitless-river-33387.herokuapp.com/register/"
+            onsubmit="event.preventDefault(); createUser()"
+          >
+            <div class="field">
+              <label>Full name</label>
+              <input
+                type="text"
+                name="fullname"
+                placeholder="eg.. John Doe"
+                required
+              />
+            </div>
+            <div class="field">
+              <label>Username</label>
+              <input
+                type="text"
+                name="username"
+                placeholder="eg.. algebrainiac3435"
+                required
+              />
+            </div>
+            <div class="field">
+              <label>Email</label>
+              <input
+                type="email"
+                name="email"
+                placeholder="eg.. albert.einstein@time.com"
+                required
+              />
+            </div>
+            <div class="field">
+              <label>Password</label>
+              <input type="password" name="password" required />
+            </div>
             <div class="field">
               <a href="#" id="back" class="trouble">Back to login</a>
             </div>
@@ -70,42 +95,9 @@
         </div>
       </div>
     </div>
-    <!-- <section class="switch">
-      <div class="switch-left">
-        <h3 onclick="switchLog()">Sign in</h3>
-      </div>
-      <div class="switch-right">
-        <h3 onclick="switchReg()">Register</h3>
-      </div>
-    </section>
-    <section class="landing">
-        <div class="login" id="log">
-            <h1>Sign in</h1><br>
-            <form action="">
-            <label for="username">Username</label>
-            <input type="text" name="username" /><br>
-            <label for="password">Password</label>
-            <input type="password" name="password" /><br>
-            <input type="submit" value="Log in">
-            </form>
-        </div>
-        <div class="register" id="reg">
-          <h1>Register</h1><br><br>
-            <form onsubmit="event.preventDefault(); createUser()" id="register">
-                <label for="fullname">Full name</label>
-                <input type="text" name="fullname" /><br />
-                <label for="username">Username</label>
-                <input type="text" name="username" /><br />
-                <label for="email">Email</label><br>
-                <input type="email" name="email" /><br />
-                <label for="password">Password</label>
-                <input type="text" name="password" /><br />
-                <input type="submit" value="Register" />
-            </form>
-        </div>
-    </section> -->
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./assets/scripts/landing.js"></script>
-    </body>
+    <script src="./assets/scripts/login.js"></script>
   </body>
 </html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./assets/images/brn-ico.png" rel="shortcut icon" />
+    <link rel="stylesheet" href="./assets/styles/main.css" />
+    <!-- <link rel="stylesheet" href="./assets/styles/preloader.css" /> -->
+    <title>Brainiac</title>
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div class="preloader">
+      <i class="brainLoader"></i>
+    </div>
+    <section id="screen1">
+      <!-- welcome msg -->
+      <div class="welcome">
+        Brainiac works for
+        <div class="dropping-texts">
+          <div>Teachers</div>
+          <div>Students</div>
+          <div>Parents</div>
+          <div>EVERYONE!</div>
+        </div>
+      </div>
+
+      <!-- navbar -->
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#screen2">Create Post</a></li>
+          <li><a href="#screen3">View Posts</a></li>
+          <li><a class="logout" onclick="logout()">Logout</a></li>
+          <!-- <li><a href="#">Contact</a></li> -->
+        </ul>
+      </nav>
+    </section>
+    <!--***************************** SECTION 2 ************************************************************************-->
+    <section id="screen2">
+      <br /><br /><br />
+      <h1>Welcome to Brainiac,</h1>
+      <h1><span id="heading"></span></h1>
+
+      <div id="form-main">
+        <div id="form-div">
+          <form
+            class="form"
+            id="create-post"
+            onsubmit="event.preventDefault(); createPost()"
+          >
+            <h1>Create new post</h1>
+            <br /><br />
+            <p class="title">
+              <input
+                name="title"
+                type="text"
+                class="feedback-input"
+                placeholder="Title (include topic)"
+                id="title"
+              />
+            </p>
+            <p class="message">
+              <textarea
+                name="message"
+                class="feedback-input"
+                id="message"
+                placeholder="Message"
+              ></textarea>
+            </p>
+            <p class="image">
+              <input
+                name="image"
+                type="text"
+                class="feedback-input"
+                id="image"
+                placeholder="Image (not required)"
+              />
+            </p>
+
+            <div class="submit">
+              <button type="submit" id="button-blue">Post</button>
+              <div class="ease"></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <!-- ****************************SECTION 3************************************************************************* -->
+    <section id="screen3">
+      <div class="post-left"></div>
+      <div class="post-center">
+        <br />
+        <h1>Scroll through the posts</h1>
+        <br /><br />
+        <div id="posts"></div>
+      </div>
+      <div class="post-right"></div>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./assets/scripts/main.js"></script>
+  </body>
+</html>
