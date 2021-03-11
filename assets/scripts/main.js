@@ -74,8 +74,8 @@ function displayPosts() {
           <div class="button">
           <button class="btn">View comments</button>
           <button class="btn">Post comments</button>
-
           </div>
+          <br><br>
       </div>
       <br><br>
         `;
