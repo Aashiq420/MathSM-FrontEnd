@@ -17,14 +17,14 @@ function createUser() {
   })
     .then((response) => response.json())
     .then((json) => {
-      alert(json);
+      alert(json.msg);
       console.log(json);
       document.getElementById("create-user").reset();
-    })
-    .catch((e) => console.log(e));
+      location.reload();
+    });
 }
 
-//jquery stuff for modal
+//jquery stuff for login/register modal
 $(document).ready(function () {
   $("#account").on("click", function () {
     $("#login").addClass("hide");
