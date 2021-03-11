@@ -84,3 +84,32 @@ function displayPosts() {
     });
 }
 displayPosts();
+
+// is element in viewport
+function isInViewport(el) {
+  const rect = el.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <=
+      (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+
+const form = document.querySelector(".form");
+
+document.addEventListener(
+  "scroll",
+  function () {
+    const dropText = document.getElementById("droptext");
+    const messageText = isInViewport(form)
+      ? (dropText.style.display = "none") //"The box is visible in the viewport"
+      : (dropText.style.display = "inline-block"); //"The box is not visible in the viewport";
+
+    console.log(messageText);
+  },
+  {
+    passive: true,
+  }
+);
