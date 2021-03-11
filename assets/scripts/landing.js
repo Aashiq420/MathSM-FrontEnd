@@ -18,7 +18,6 @@ function createUser() {
     .then((response) => response.json())
     .then((json) => {
       alert(json.msg);
-      console.log(json);
       document.getElementById("create-user").reset();
       location.reload();
     });

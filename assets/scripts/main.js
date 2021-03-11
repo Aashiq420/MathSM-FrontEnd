@@ -12,7 +12,6 @@ $(document).ready(function () {
 
 //passing user data (fetching here actually)
 let retrievedObject = JSON.parse(localStorage.getItem("user"));
-console.log(retrievedObject);
 
 //displayng specialised welcome message
 let head = document.getElementById("heading");
@@ -39,7 +38,6 @@ function createPost() {
     .then((response) => response.json())
     .then((json) => {
       alert(json.msg);
-      console.log(json);
       document.getElementById("create-post").reset();
       location.reload();
     });
@@ -57,7 +55,6 @@ function displayPosts() {
   fetch("https://limitless-river-33387.herokuapp.com/post-data/")
     .then((response) => response.json())
     .then((data) => {
-      console.table(data);
       let list = document.getElementById("posts");
       data.forEach((post) => {
         let item = `
