@@ -23,13 +23,13 @@ function createPost() {
   const inputs = form.getElementsByTagName("input");
   const texta = form.getElementsByTagName("textarea");
 
-  // https://limitless-river-33387.herokuapp.com/create-post/
   fetch("https://limitless-river-33387.herokuapp.com/create-post/", {
     method: "POST",
     body: JSON.stringify({
       title: inputs[0].value,
       message: texta[0].value,
       image: inputs[1].value,
+      poster: retrievedObject.username,
     }),
     headers: {
       "Content-Type": "application/json; charset=UTF-8",
@@ -68,9 +68,12 @@ function displayPosts() {
           <div class="image">
             <p>${post.image}</p>
           </div>
+          <div class="poster">
+            <p>Posted by: ${post.poster}</p>
+          </div><br>
           <div class="button">
-          <button id="myBtn" class="btn" onclick="openModal()">View comments</button>
-          <button class="btn">Post comments</button>
+          <button id="myBtn" class="btn" onclick="openComments()">View comments</button>
+          <button class="btn" onclick="createComment()">Post comment</button>
           </div>
           <br><br>
       </div>
@@ -121,12 +124,12 @@ var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks the button, open the modal
-function openModal() {
+function openComments() {
   modal.style.display = "block";
 }
 
 // When the user clicks on <span> (x), close the modal
-function closeModal() {
+function closeComments() {
   modal.style.display = "none";
 }
 
