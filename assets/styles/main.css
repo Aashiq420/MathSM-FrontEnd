@@ -365,10 +365,11 @@ li a:hover {
 }
 /* ----------------------------------SECTION 3 (homepage)-------------------------------------------------------- */
 .post-container {
-  border: 2px solid red;
+  border: 2px solid #4caf50;
   border-radius: 15px;
   margin-left: 10%;
   margin-right: 10%;
+  background-color: rgba(255, 255, 255, 0.2);
 }
 .post-left {
   width: 15%;
@@ -495,6 +496,9 @@ li a:hover {
 
 .modal-body {
   padding: 2px 16px;
+}
+.modal-body p {
+  color: #000;
 }
 
 .modal-footer {
