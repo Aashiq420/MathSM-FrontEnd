@@ -88,7 +88,7 @@
     </section>
     <!-- ****************************SECTION 3************************************************************************* -->
     <section id="screen3">
-      <!-- The Modal -->
+      <!-- view comment Modal -->
       <div id="myModal" class="modal">
         <!-- Modal content -->
         <div class="modal-content">
@@ -101,14 +101,29 @@
           </div>
         </div>
       </div>
-      <div class="post-left"></div>
+      <!-- post comment modal -->
+      <!-- The Modal -->
+      <div id="post-comment" class="post-comment-modal">
+        <!-- Modal content -->
+        <div class="post-modal-content">
+          <span class="close2">&times;</span>
+          <br />
+          <pre class="post-comment-head">Your comment:</pre>
+          <br />
+          <textarea placeholder="Please be nice..." id="comment-msg"></textarea>
+          <br />
+          <button class="btn" onclick="createComment()">Post Comment</button>
+        </div>
+      </div>
+
+      <!-- <div class="post-left"></div> -->
       <div class="post-center">
         <br />
         <h1>Scroll through the posts</h1>
         <br /><br />
         <div id="posts"></div>
       </div>
-      <div class="post-right"></div>
+      <!-- <div class="post-right"></div> -->
     </section>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./assets/scripts/main.js"></script>
