@@ -73,7 +73,7 @@ function displayPosts() {
           </div><br>
           <div class="button">
           <button id="myBtn" class="btn" onclick="openComments()">View comments</button>
-          <button class="btn" onclick="createComment()">Post comment</button>
+          <button class="btn" onclick="openPostComment()">Post comment</button>
           </div>
           <br><br>
       </div>
@@ -85,7 +85,7 @@ function displayPosts() {
 }
 displayPosts();
 
-// is element in viewport
+//check is element in viewport
 function isInViewport(el) {
   const rect = el.getBoundingClientRect();
   return (
@@ -103,7 +103,7 @@ document.addEventListener(
   "scroll",
   function () {
     const dropText = document.getElementById("droptext");
-    isInViewport(form) ? (dropText.style.display = "none") : console.log();
+    // isInViewport(form) ? (dropText.style.display = "none") : console.log();
     isInViewport(dropText)
       ? (dropText.style.display = "inline-block")
       : (dropText.style.display = "none");
@@ -113,7 +113,7 @@ document.addEventListener(
   }
 );
 
-//post comment js
+//view comment js
 // Get the modal
 var modal = document.getElementById("myModal");
 
@@ -139,3 +139,34 @@ window.onclick = function (event) {
     modal.style.display = "none";
   }
 };
+
+//create comment function. will use data in localstorage tosee who is commenting
+function createComment() {
+  console.log("POST COMMENT BTN CLICKED");
+}
+//create comment modal code
+// Get the modal
+var modal2 = document.getElementById("post-comment");
+
+// Get the <span> element that closes the modal
+var span2 = document.getElementsByClassName("close2")[0];
+
+// When the user clicks the button, open the modal
+function openPostComment() {
+  modal2.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span2.onclick = function () {
+  modal2.style.display = "none";
+};
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+  if (event.target == modal2) {
+    modal2.style.display = "none";
+  }
+};
+
+//post comment to database
+function createComment() {}
