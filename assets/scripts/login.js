@@ -1,4 +1,4 @@
-let user;
+let users;
 
 fetch("https://limitless-river-33387.herokuapp.com/user-data/")
   .then((response) => response.json())
